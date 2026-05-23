@@ -1,0 +1,79 @@
+From 21a1b60c12e324241cfd437c619b0349e4e6d76f Mon Sep 17 00:00:00 2001
+From: David Heidelberg <david@ixit.cz>
+Date: Tue, 2 Jun 2026 19:24:54 +0200
+Subject: [PATCH 4/6] Language sort, release log, and developer id
+
+Signed-off-by: David Heidelberg <david@ixit.cz>
+---
+ linux/cz.nic.mobile-datovka.metainfo.xml | 27 ++++++++++++++++++------
+ 1 file changed, 20 insertions(+), 7 deletions(-)
+
+diff --git a/linux/cz.nic.mobile-datovka.metainfo.xml b/linux/cz.nic.mobile-datovka.metainfo.xml
+index a7dcdd20..9bb0c72c 100644
+--- a/linux/cz.nic.mobile-datovka.metainfo.xml
++++ b/linux/cz.nic.mobile-datovka.metainfo.xml
+@@ -10,41 +10,54 @@
+ 	</content_rating>
+ 	<launchable type="desktop-id">cz.nic.mobile-datovka.desktop</launchable>
+ 
+ 	<name>Mobile Datovka</name>
+ 	<name xml:lang="cs">Mobilní Datovka</name>
+ 
+ 	<summary>A free graphical user interface for data boxes</summary>
+ 	<summary xml:lang="cs">Svobodné uživatelské rozhraní pro datové schránky</summary>
++	<developer id="cz.nic">
++		<name>CZ.NIC, z.s.p.o.</name>
++	</developer>
+ 
+ 	<description>
+ 		<p>
+ 			Datovka is a multiplatform mobile application for accessing data boxes.
+ 			A data box is an electronic storage site in Czech Republic. It is intended
+ 			for delivery of official documents and for communication with public
+ 			authority bodies.
+ 		</p>
+-		<p>
+-			Mobile Datovka allows receiving and sending of data messages together with
+-			some useful functions.
+-		</p>
+-	</description>
+-	<description xml:lang="cs">
+-		<p>
++		<p xml:lang="cs">
+ 			Datovka je multiplatformní mobilní aplikace pro přístup k datovým schránkám.
+ 			Datová schránka v České republice je elektronické úložiště, které je určeno
+ 			k doručování dokumentů a pro komunikaci s orgány veřejné moci.
+ 		</p>
+ 		<p>
++			Mobile Datovka allows receiving and sending of data messages together with
++			some useful functions.
++		</p>
++		<p xml:lang="cs">
+ 			Mobilní Datovka dovoluje číst a odesílat datové zprávy a obsahuje některé
+ 			užitečné funkce.
+ 		</p>
+ 	</description>
+ 
++	<releases>
++		<release version="2.6.4" date="2026-06-04">
++			<description>
++				<ul>
++					<li>Showing all available log files in a combo box.</li>
++					<li>Attaching all logs when sending e-mail to developers.</li>
++					<li>Updated application logo.</li>
++				</ul>
++			</description>
++		</release>
++	</releases>
++
+ 	<kudos>
+ 		<kudo>HiDpiIcon</kudo>
+ 		<kudo>ModernToolkit</kudo>
+ 	</kudos>
+ 
+ 	<screenshots>
+ 		<screenshot type="default">
+ 			<image>https://www.datovka.cz/images/mobile2-main.png</image>
+-- 
+2.53.0
+

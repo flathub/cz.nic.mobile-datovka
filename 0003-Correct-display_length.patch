@@ -1,0 +1,30 @@
+From 401919b1b2dab6bd54907da7c45270f6a1da0c35 Mon Sep 17 00:00:00 2001
+From: David Heidelberg <david@ixit.cz>
+Date: Tue, 2 Jun 2026 19:11:50 +0200
+Subject: [PATCH 3/6] Correct display_length
+
+Signed-off-by: David Heidelberg <david@ixit.cz>
+---
+ linux/cz.nic.mobile-datovka.metainfo.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/linux/cz.nic.mobile-datovka.metainfo.xml b/linux/cz.nic.mobile-datovka.metainfo.xml
+index 8d797569..a7dcdd20 100644
+--- a/linux/cz.nic.mobile-datovka.metainfo.xml
++++ b/linux/cz.nic.mobile-datovka.metainfo.xml
+@@ -73,11 +73,11 @@
+ 	<supports>
+ 		<control>pointing</control>
+ 		<control>touch</control>
+ 	</supports>
+ 	<recommends>
+ 		<internet>always</internet>
+ 	</recommends>
+ 	<requires>
+-		<display_length compare="gt">xsmall</display_length>
++		<display_length compare="gt">360</display_length>
+ 	</requires>
+ </component>
+-- 
+2.53.0
+

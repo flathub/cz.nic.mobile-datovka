@@ -1,0 +1,40 @@
+app-id: cz.nic.mobile-datovka
+runtime: org.kde.Platform
+sdk: org.kde.Sdk
+runtime-version: '6.10'
+command: mobile-datovka
+rename-icon: datovka
+
+finish-args:
+  - --filesystem=xdg-documents/Datovka
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --share=network
+  - --device=dri
+
+modules:
+  - name: mobile-datovka
+    buildsystem: qmake
+    sources:
+        - type: archive
+          url: https://datovka.nic.cz/mobile-datovka/2.6.4/mobile-datovka-2.6.4.tar.xz
+          sha256: 96b072e72f1a1ce96db5ea49ac3c095faa037464bbcbf2120364dd65ecb5e891
+        - type: patch
+          paths:
+            - 0001-Use-same-bundle-naming-for-Linux-as-the-one-for-iOS.patch
+            - 0002-Fix-desktop-id-and-screenshots-URL.patch
+            - 0003-Correct-display_length.patch
+            - 0004-Language-sort-release-log-and-developer-id.patch
+            - 0005-Community-package.patch
+    post-install:
+      - |
+        mkdir -p ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps
+
+        ffmpeg -loglevel error \
+            -i ios/Images.xcassets/AppIcon.appiconset/AppIcon_1024px-src.png \
+            -vf scale=512:512 \
+            -frames:v 1 \
+            -update 1 \
+            ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
+

@@ -1,0 +1,37 @@
+From d0f3d2130d1fde9bc1770324baa70af292f82042 Mon Sep 17 00:00:00 2001
+From: David Heidelberg <david@ixit.cz>
+Date: Wed, 3 Jun 2026 14:03:39 +0200
+Subject: [PATCH 5/6] Community package.
+
+Signed-off-by: David Heidelberg <david@ixit.cz>
+---
+ linux/cz.nic.mobile-datovka.metainfo.xml | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/linux/cz.nic.mobile-datovka.metainfo.xml b/linux/cz.nic.mobile-datovka.metainfo.xml
+index 9bb0c72c..ca917c25 100644
+--- a/linux/cz.nic.mobile-datovka.metainfo.xml
++++ b/linux/cz.nic.mobile-datovka.metainfo.xml
+@@ -15,16 +15,19 @@
+ 
+ 	<summary>A free graphical user interface for data boxes</summary>
+ 	<summary xml:lang="cs">Svobodné uživatelské rozhraní pro datové schránky</summary>
+ 	<developer id="cz.nic">
+ 		<name>CZ.NIC, z.s.p.o.</name>
+ 	</developer>
+ 
+ 	<description>
++		<p>
++			This is a community package of Mobile Datovka and not officially supported by CZ.NIC.
++		</p>
+ 		<p>
+ 			Datovka is a multiplatform mobile application for accessing data boxes.
+ 			A data box is an electronic storage site in Czech Republic. It is intended
+ 			for delivery of official documents and for communication with public
+ 			authority bodies.
+ 		</p>
+ 		<p xml:lang="cs">
+ 			Datovka je multiplatformní mobilní aplikace pro přístup k datovým schránkám.
+-- 
+2.53.0
+

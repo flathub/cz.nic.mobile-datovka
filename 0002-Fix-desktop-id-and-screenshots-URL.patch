@@ -1,0 +1,87 @@
+From 640396d2ba719deddda72cb3d7086a908291e580 Mon Sep 17 00:00:00 2001
+From: David Heidelberg <david@ixit.cz>
+Date: Wed, 20 May 2026 17:57:10 +0200
+Subject: [PATCH 2/6] Fix desktop id and screenshots URL
+
+Signed-off-by: David Heidelberg <david@ixit.cz>
+---
+ linux/cz.nic.mobile-datovka.metainfo.xml | 32 ++++++++++++++++++------
+ 1 file changed, 25 insertions(+), 7 deletions(-)
+
+diff --git a/linux/cz.nic.mobile-datovka.metainfo.xml b/linux/cz.nic.mobile-datovka.metainfo.xml
+index 1fb9636e..8d797569 100644
+--- a/linux/cz.nic.mobile-datovka.metainfo.xml
++++ b/linux/cz.nic.mobile-datovka.metainfo.xml
+@@ -1,19 +1,19 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <!-- Copyright 2014-2026 CZ.NIC Labs -->
+ <component type="desktop-application">
+-	<id>cz.nic.datovka.mobile</id>
++	<id>cz.nic.mobile-datovka</id>
+ 	<metadata_license>CC0-1.0</metadata_license>
+ 	<project_license>GPL-3.0-or-later</project_license>
+ 	<content_rating type="oars-1.1">
+ 		<content_attribute id="social-chat">intense</content_attribute>
+ 		<content_attribute id="social-contacts">intense</content_attribute>
+ 	</content_rating>
+-	<launchable type="desktop-id">nic.cz.mobile-datovka.desktop</launchable>
++	<launchable type="desktop-id">cz.nic.mobile-datovka.desktop</launchable>
+ 
+ 	<name>Mobile Datovka</name>
+ 	<name xml:lang="cs">Mobilní Datovka</name>
+ 
+ 	<summary>A free graphical user interface for data boxes</summary>
+ 	<summary xml:lang="cs">Svobodné uživatelské rozhraní pro datové schránky</summary>
+ 
+ 	<description>
+@@ -42,24 +42,42 @@
+ 
+ 	<kudos>
+ 		<kudo>HiDpiIcon</kudo>
+ 		<kudo>ModernToolkit</kudo>
+ 	</kudos>
+ 
+ 	<screenshots>
+ 		<screenshot type="default">
+-			<image>https://www.datovka.cz/images/mobile-main.png</image>
++			<image>https://www.datovka.cz/images/mobile2-main.png</image>
+ 			<caption>Main window of the application</caption>
+ 			<caption xml:lang="cs">Hlavní okno aplikace</caption>
+ 		</screenshot>
++		<screenshot>
++			<image>https://www.datovka.cz/images/mobile2-messages.png</image>
++			<caption>Messages window of the application</caption>
++			<caption xml:lang="cs">Seznam zpráv</caption>
++		</screenshot>
++		<screenshot>
++			<image>https://www.datovka.cz/images/mobile2-message.png</image>
++			<caption>Message window of the application</caption>
++			<caption xml:lang="cs">Okno zprávy</caption>
++		</screenshot>
++		<screenshot>
++			<image>https://www.datovka.cz/images/mobile2-settings.png</image>
++			<caption>Settings of the application</caption>
++			<caption xml:lang="cs">Nastavení</caption>
++		</screenshot>
+ 	</screenshots>
+ 
+ 	<update_contact>datovka@labs.nic.cz</update_contact>
+ 	<url type="homepage">https://www.datovka.cz/cs/pages/mobilni-datovka.html</url>
++	<supports>
++		<control>pointing</control>
++		<control>touch</control>
++	</supports>
++	<recommends>
++		<internet>always</internet>
++	</recommends>
+ 	<requires>
+ 		<display_length compare="gt">xsmall</display_length>
+ 	</requires>
+-	<custom>
+-		<value key="Purism::form_factor">workstation</value>
+-		<value key="Purism::form_factor">mobile</value>
+-	</custom>
+ </component>
+-- 
+2.53.0
+

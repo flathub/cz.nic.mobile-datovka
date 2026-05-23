@@ -1,0 +1,90 @@
+From 702634327a2fe638d51298400fdaf6f6869ace8a Mon Sep 17 00:00:00 2001
+From: David Heidelberg <david@ixit.cz>
+Date: Sun, 24 May 2026 11:54:41 +0200
+Subject: [PATCH 1/6] Use same bundle naming for Linux as the one for iOS
+
+Signed-off-by: David Heidelberg <david@ixit.cz>
+---
+ ...mobile-datovka.desktop => cz.nic.mobile-datovka.desktop} | 4 ++--
+ ...bile.metainfo.xml => cz.nic.mobile-datovka.metainfo.xml} | 0
+ mobile-datovka.pro                                          | 6 ++++--
+ 3 files changed, 6 insertions(+), 4 deletions(-)
+ rename linux/{nic.cz.mobile-datovka.desktop => cz.nic.mobile-datovka.desktop} (82%)
+ rename linux/{cz.nic.datovka.mobile.metainfo.xml => cz.nic.mobile-datovka.metainfo.xml} (100%)
+
+diff --git a/linux/nic.cz.mobile-datovka.desktop b/linux/cz.nic.mobile-datovka.desktop
+similarity index 82%
+rename from linux/nic.cz.mobile-datovka.desktop
+rename to linux/cz.nic.mobile-datovka.desktop
+index fdd060f3..94bacd58 100644
+--- a/linux/nic.cz.mobile-datovka.desktop
++++ b/linux/cz.nic.mobile-datovka.desktop
+@@ -1,13 +1,13 @@
+ [Desktop Entry]
+ Type=Application
+ Version=1.0
+ Name=Mobile Datovka
+ GenericName=Datovka
+ Comment=Mobile client for ISDS
+ Exec=mobile-datovka
+-Icon=datovka
++Icon=cz.nic.mobile-datovka
+ Terminal=false
+-Categories=Office;Email;Qt;
++Categories=Office;Email;
+ Keywords=ISDS;
+ Keywords[cs]=ISDS;datová;zpráva;pošta;
+ X-Purism-FormFactor=Workstation;Mobile;
+diff --git a/linux/cz.nic.datovka.mobile.metainfo.xml b/linux/cz.nic.mobile-datovka.metainfo.xml
+similarity index 100%
+rename from linux/cz.nic.datovka.mobile.metainfo.xml
+rename to linux/cz.nic.mobile-datovka.metainfo.xml
+diff --git a/mobile-datovka.pro b/mobile-datovka.pro
+index 8775b0ce..76806f0d 100644
+--- a/mobile-datovka.pro
++++ b/mobile-datovka.pro
+@@ -6,16 +6,18 @@ GOOGLEPLAY_APP_NAME = "$${APP_NAME}"
+ GOOGLEPLAY_CODE_VERSION = 1
+ GOOGLEPLAY_PACKAGE_NAME_ID = "cz.nic.mobiledatovka"
+ GOOGLEPLAY_APP_ICON = "icon"
+ 
+ CF_BUNDLE_NAME = "$${APP_NAME}"
+ CF_BUNDLE_TARGET_NAME = "mobile-datovka"
+ CF_BUNDLE_IDENTIFIER = "cz.nic.mobile-datovka"
+ 
++LINUX_BUNDLE_IDENTIFIER = "cz.nic.mobile-datovka"
++
+ include(pri/version.pri)
+ 
+ DESCRIPTION = "Mobile client for ISDS"
+ 
+ isEmpty(MOC_DIR) {
+ 	MOC_DIR = gen_moc
+ }
+ isEmpty(OBJECTS_DIR) {
+@@ -560,20 +562,20 @@ linux {
+     BINDIR="$${PREFIX}/bin"
+     DATADIR="$${PREFIX}/share"
+ 
+     LOCALE_INST_DIR = "$${DATADIR}/$${APP_NAME}/localisations"
+ 
+     target.path = "$${BINDIR}"
+ 
+     desktop.path = "$${DATADIR}/applications"
+-    desktop.files += "linux/nic.cz.mobile-datovka.desktop"
++    desktop.files += "linux/$${LINUX_BUNDLE_IDENTIFIER}.desktop"
+ 
+     metainfo.path = "$${DATADIR}/metainfo"
+-    metainfo.files += "linux/cz.nic.datovka.mobile.metainfo.xml"
++    metainfo.files += "linux/$${LINUX_BUNDLE_IDENTIFIER}.metainfo.xml"
+ 
+     icon64.path = "$${DATADIR}/icons/hicolor/64x64/apps"
+     icon64.files += "res/datovka.png"
+ 
+     localisation.path = "$${LOCALE_INST_DIR}"
+     localisation.files += \
+ 		res/locale/datovka_cs.qm \
+ 		res/locale/datovka_en.qm \
+-- 
+2.53.0
+
