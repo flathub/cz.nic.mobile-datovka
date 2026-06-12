@@ -12,8 +12,9 @@ diff --git a/linux/cz.nic.mobile-datovka.metainfo.xml b/linux/cz.nic.mobile-dato
 index 8d797569..a7dcdd20 100644
 --- a/linux/cz.nic.mobile-datovka.metainfo.xml
 +++ b/linux/cz.nic.mobile-datovka.metainfo.xml
-@@ -73,11 +73,11 @@
+@@ -73,11 +73,12 @@
  	<supports>
++		<control>keyboard</control>
  		<control>pointing</control>
  		<control>touch</control>
  	</supports>
@@ -22,7 +23,7 @@ index 8d797569..a7dcdd20 100644
  	</recommends>
  	<requires>
 -		<display_length compare="gt">xsmall</display_length>
-+		<display_length compare="gt">360</display_length>
++		<display_length compare="ge">360</display_length>
  	</requires>
  </component>
 -- 
