@@ -12,7 +12,7 @@ diff --git a/linux/cz.nic.mobile-datovka.metainfo.xml b/linux/cz.nic.mobile-dato
 index 9bb0c72c..ca917c25 100644
 --- a/linux/cz.nic.mobile-datovka.metainfo.xml
 +++ b/linux/cz.nic.mobile-datovka.metainfo.xml
-@@ -15,16 +15,19 @@
+@@ -15,16 +15,17 @@
  
  	<summary>A free graphical user interface for data boxes</summary>
  	<summary xml:lang="cs">Svobodné uživatelské rozhraní pro datové schránky</summary>
@@ -21,9 +21,7 @@ index 9bb0c72c..ca917c25 100644
  	</developer>
  
  	<description>
-+		<p>
-+			This is a community package of Mobile Datovka and not officially supported by CZ.NIC.
-+		</p>
++		<p>**Note: This is a community package of Mobile Datovka and not officially supported by CZ.NIC.**</p>
  		<p>
  			Datovka is a multiplatform mobile application for accessing data boxes.
  			A data box is an electronic storage site in Czech Republic. It is intended
